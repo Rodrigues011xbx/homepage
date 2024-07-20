@@ -124,8 +124,8 @@ ScrollReveal({
   #contact header`
 );
 
-const checkbox = document.getElementById('toggle');
-const body = document.body;
+const checkbox = document.getElementById('sw-checkbox');
+const body = document.getElementsByTagName("body");
 
 checkbox.addEventListener('change', () => {
     if (checkbox.checked) {

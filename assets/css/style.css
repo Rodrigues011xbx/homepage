@@ -1668,7 +1668,7 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
 
 /* Estilizando o botão */
 .project-button {
-  width: 30vw;
+  max-width: 30em;
   background-color: #b1b6b9; /* Azul suave */
   color: #fff; /* Cor do texto branco */
   border: none; /* Sem borda */
