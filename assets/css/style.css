@@ -44,7 +44,7 @@ body {
   background-color: var(--bg-color);
 }
 
-body.light-mode {
+body.light-theme {
   --secundary-color: rgb(229, 229, 229);
   --third-color: hwb(0 48% 52% / 0.356);
   --bg-color: rgb(241, 241, 241);
@@ -149,8 +149,8 @@ section span {
   transition: 400ms;
 }
 
-body.light-mode .button,
-body.light-mode #home h4 {
+body.light-theme .button,
+body.light-theme #home h4 {
   filter: brightness(0.8);
 }
 
@@ -161,7 +161,7 @@ body.light-mode #home h4 {
   cursor: pointer;
 }
 
-body.light-mode .button:hover {
+body.light-theme .button:hover {
   filter: none;
 }
 
@@ -207,8 +207,8 @@ body nav#navigation .social-links li:nth-child(2) svg:hover path:nth-child(2) {
   fill: #fff;
 }
 
-body.light-mode .social-links li:nth-child(2) svg:hover path:nth-child(2),
-body.light-mode
+body.light-theme .social-links li:nth-child(2) svg:hover path:nth-child(2),
+body.light-theme
   nav#navigation
   .social-links
   li:nth-child(2)
@@ -271,7 +271,7 @@ nav.scroll {
   -webkit-backdrop-filter: blur(1rem);
 }
 
-body.light-mode nav.scroll {
+body.light-theme nav.scroll {
   background: rgba(151, 151, 151, 0.5);
 }
 
@@ -287,15 +287,15 @@ nav#navigation a.logo {
   color: var(--primary-color);
 }
 
-body.light-mode nav#navigation a.logo,
-body.light-mode footer a.logo {
+body.light-theme nav#navigation a.logo,
+body.light-theme footer a.logo {
   font-weight: bold;
 }
 
 footer a.logo,
 nav#navigation.scroll a.logo,
 body.menu-expanded nav#navigation a.logo,
-body.light-mode.menu-expanded nav#navigation.scroll a.logo {
+body.light-theme.menu-expanded nav#navigation.scroll a.logo {
   color: #fff;
 }
 
@@ -303,12 +303,12 @@ body.menu-expanded nav#navigation a.logo {
   opacity: 1;
 }
 
-body.light-mode nav#navigation a.logo {
+body.light-theme nav#navigation a.logo {
   filter: brightness(0.8);
 }
 
-body.light-mode footer a.logo,
-body.light-mode nav#navigation.scroll a.logo {
+body.light-theme footer a.logo,
+body.light-theme nav#navigation.scroll a.logo {
   color: #000;
 }
 
@@ -521,8 +521,8 @@ body.menu-expanded button path {
 }
 
 #home img#notebook-2-white,
-body.light-mode #home img#notebook-1,
-body.light-mode #home img#notebook-2 {
+body.light-theme #home img#notebook-1,
+body.light-theme #home img#notebook-2 {
   visibility: hidden;
   opacity: 0;
   animation: none;
@@ -536,7 +536,7 @@ body.light-mode #home img#notebook-2 {
   position: absolute;
 }
 
-body.light-mode #home img#notebook-2-white {
+body.light-theme #home img#notebook-2-white {
   position: absolute;
   visibility: visible;
   opacity: 1;
@@ -903,7 +903,7 @@ body.light-mode #home img#notebook-2-white {
   border-radius: 100%;
 }
 
-body.light-mode #contact .col-b::after {
+body.light-theme #contact .col-b::after {
   background-color: grey;
 }
 
@@ -928,11 +928,11 @@ footer .logo {
 }
 
 footer a img:nth-child(2),
-body.light-mode footer a img:nth-child(1) {
+body.light-theme footer a img:nth-child(1) {
   display: none;
 }
 
-body.light-mode footer a img:nth-child(2) {
+body.light-theme footer a img:nth-child(2) {
   display: initial;
 }
 
@@ -1112,7 +1112,7 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
     transition: opacity 0.4s;
   }
 
-  body.light-mode nav#navigation .menu ul li a {
+  body.light-theme nav#navigation .menu ul li a {
     opacity: 1;
   }
 
@@ -1669,8 +1669,8 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
 /* Estilizando o botão */
 .project-button {
   max-width: 30em;
-  background-color: #b1b6b9; /* Azul suave */
-  color: #fff; /* Cor do texto branco */
+  background-color: #fff8f8; /* Azul suave */
+  color: #131313; /* Cor do texto branco */
   border: none; /* Sem borda */
   border-radius: 25px; /* Bordas arredondadas */
   padding: 15px 30px; /* Espaçamento interno */
@@ -1678,13 +1678,21 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   font-weight: bold; /* Negrito */
   cursor: pointer; /* Cursor de mãozinha */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s; /* Transições suaves */
 }
 
 /* Mudança de cor e sombra ao passar o mouse */
 .project-button:hover {
-  background-color: #0ae26c; /* Azul mais escuro */
+  background-color: #0ae26c; /* Verde mais escuro */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+}
+
+body.light-theme .project-button {
+  border: 0.2rem solid #0ae26c;
+}
+body.light-theme .project-button:hover {
+  background-color: #0ae26c;
+  color: #fff;
 }
 
 .fale{
@@ -1693,10 +1701,10 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
 }
 
 
-#perfil {
+.perfil {
   line-height: 1.8;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #5a5e61;
+  background-color: #313335;
   border-left: 4px solid #4CAF50;
   padding: 15px 20px;
   margin: 20px 0;
@@ -1704,4 +1712,6 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   border-radius: 10px;
 }
 
-
+body.light-theme .perfil {
+  background-color: #ffffff;
+}

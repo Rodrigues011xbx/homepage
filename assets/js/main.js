@@ -1,9 +1,8 @@
-import { desafios } from "./desafios.js";
-import { projetos } from "./projetos.js";
+// import { desafios } from "./desafios.js";
+// import { projetos } from "./projetos.js";
 
 const navigation = document.querySelector("#navigation");
 const backToTopButton = document.querySelector("#backToTopButton");
-const toggle = document.querySelector("#sw-checkbox");
 const projectsSection = document.querySelector("#projects .wrapper");
 
 const notebook_1 = document.querySelector("#notebook-1");
@@ -11,17 +10,20 @@ const notebook_2 = document.querySelector("#notebook-2");
 const notebook_2_white = document.querySelector("#notebook-2-white");
 const vidro = document.querySelector("#vidro");
 
-window.addEventListener("load", function begin() {
-  projetos(projectsSection);
-  const desafioBtn = document.querySelector("#desafio");
+const checkbox = document.getElementById('sw-checkbox');
+const body = document.getElementsByTagName("body")[0];
 
-  desafioBtn.addEventListener("click", () => {
-    desafios(projectsSection);
-    document
-      .querySelector("#backToProjectsBtn")
-      .addEventListener("click", begin);
-  });
-});
+// window.addEventListener("load", function begin() {
+//   projetos(projectsSection);
+//   const desafioBtn = document.querySelector("#desafio");
+
+//   desafioBtn.addEventListener("click", () => { // ERRO
+//     desafios(projectsSection);
+//     document
+//       .querySelector("#backToProjectsBtn")
+//       .addEventListener("click", begin);
+//   });
+// });
 
 window.addEventListener("scroll", onScroll);
 onScroll();
@@ -124,15 +126,26 @@ ScrollReveal({
   #contact header`
 );
 
-const checkbox = document.getElementById('sw-checkbox');
-const body = document.getElementsByTagName("body");
+const temaSalvo = localStorage.getItem('theme');
+if (temaSalvo === 'dark') {
+  checkbox.checked = false;
+  body.classList.remove('light-theme');
+  body.classList.add('dark-theme');
+}
+else if (temaSalvo === 'light') {
+  checkbox.checked = true;
+  body.classList.remove('dark-theme');
+  body.classList.add('light-theme');
+}
 
-checkbox.addEventListener('change', () => {
+checkbox.addEventListener('change', () => { // ERRO
     if (checkbox.checked) {
-        body.classList.remove('light-theme');
-        body.classList.add('dark-theme');
+      body.classList.remove('dark-theme');
+      body.classList.add('light-theme');
+      localStorage.setItem('theme', 'light');
     } else {
-        body.classList.remove('dark-theme');
-        body.classList.add('light-theme');
+      body.classList.remove('light-theme');
+      body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
     }
-});
+})
