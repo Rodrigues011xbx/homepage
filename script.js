@@ -58,3 +58,50 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('py-2', 'shadow-sm');
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // --- LÓGICA DO MENU MOBILE ---
+    const openBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+
+    const toggleMenu = () => {
+        menu.classList.toggle('translate-x-full');
+        document.body.style.overflow = menu.classList.contains('translate-x-full') ? '' : 'hidden';
+    };
+
+    openBtn?.addEventListener('click', toggleMenu);
+    closeBtn?.addEventListener('click', toggleMenu);
+    links.forEach(link => link.addEventListener('click', toggleMenu));
+
+
+    // --- LÓGICA DE TROCA DE TEMA (DARK/LIGHT) ---
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const html = document.documentElement;
+
+    // Verifica se já existe uma preferência salva
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+    }
+
+    themeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            // Recarrega os ícones do Lucide para garantir que o ícone de sol/lua atualize
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+    });
+    
+    // Inicializa ícones
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+});

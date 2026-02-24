@@ -52,74 +52,101 @@
         <div class="blob bottom-[-10%] right-[-10%] animate-pulse-slow" style="animation-delay: 2s;"></div>
     </div>
 
-    <nav class="fixed top-0 w-full z-50 border-b border-gray-200 dark:border-glassBorder bg-white/60 dark:bg-dark/60 backdrop-blur-md" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-brand rounded-custom flex items-center justify-center font-bold text-white text-xl">GR</div>
-                <span class="font-bold text-xl tracking-tight hidden sm:block dark:text-white">Gabriel Rodrigues</span>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500 dark:text-gray-400">
-                <a class="hover:text-brand transition-colors" href="#home">Início</a>
-                <a class="hover:text-brand transition-colors" href="#about">Sobre</a>
-                <a class="hover:text-brand transition-colors" href="#projects">Projetos</a>
-                <a class="hover:text-brand transition-colors" href="#experience">Experiência</a>
-                
-                <button id="theme-toggle" class="p-2 rounded-custom hover:bg-gray-100 dark:hover:bg-white/10 transition-all active:scale-95">
-                    <i data-lucide="sun" class="hidden dark:block text-brand w-5 h-5"></i>
-                    <i data-lucide="moon" class="block dark:hidden text-gray-600 w-5 h-5"></i>
-                </button>
+   <nav class="fixed top-0 w-full z-[100] border-b border-gray-200 dark:border-glassBorder bg-white dark:bg-dark" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-brand rounded-custom flex items-center justify-center font-bold text-white text-xl">GR</div>
+            <span class="font-bold text-xl tracking-tight hidden sm:block dark:text-white text-gray-900">Gabriel Rodrigues</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500 dark:text-gray-400">
+            <a class="hover:text-brand transition-colors" href="#home">Início</a>
+            <a class="hover:text-brand transition-colors" href="#about">Sobre</a>
+            <a class="hover:text-brand transition-colors" href="#projects">Projetos</a>
+            <a class="hover:text-brand transition-colors" href="#experience">Experiência</a>
+            <button id="theme-toggle" class="p-2 rounded-custom hover:bg-gray-100 dark:hover:bg-white/10 transition-all active:scale-95 theme-btn">
+                <i data-lucide="sun" class="hidden dark:block text-brand w-5 h-5"></i>
+                <i data-lucide="moon" class="block dark:hidden text-gray-600 w-5 h-5"></i>
+            </button>
+            <a class="px-5 py-2.5 bg-brand text-white rounded-custom hover:bg-brandHover transition-all" href="#contact">Fale comigo</a>
+        </div>
 
-                <a class="px-5 py-2.5 bg-brand text-white rounded-custom hover:bg-brandHover transition-all" href="#contact">Fale comigo</a>
-            </div>
-            <button class="md:hidden text-gray-400" id="mobile-menu-btn">
-                <i data-lucide="menu"></i>
+        <div class="md:hidden flex items-center gap-2">
+            <button class="text-gray-900 dark:text-white p-2" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </div>
-    </nav>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-dark z-[150] translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex flex-col h-full p-6">
+            <div class="flex items-center justify-between mb-10">
+                <div class="w-10 h-10 bg-brand rounded-custom flex items-center justify-center font-bold text-white text-xl">GR</div>
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle-mobile" class="p-3 text-gray-900 dark:text-white theme-btn">
+                        <i data-lucide="sun" class="hidden dark:block text-brand w-7 h-7"></i>
+                        <i data-lucide="moon" class="block dark:hidden text-gray-400 w-7 h-7"></i>
+                    </button>
+                    <button id="close-menu-btn" class="p-2 text-gray-900 dark:text-white">
+                        <i data-lucide="x" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex flex-col gap-8 items-center text-center">
+                <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#home">Início</a>
+                <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#about">Sobre</a>
+                <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#projects">Projetos</a>
+                <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#experience">Experiência</a>
+                <a class="w-full mt-4 px-8 py-4 bg-brand text-white font-bold rounded-custom text-xl" href="#contact">Fale comigo</a>
+            </div>
+        </div>
+    </div>
+</nav>
 
     <main>
-        <section class="relative min-h-screen flex items-center pt-20 px-6" id="home">
+        <section class="relative min-h-screen flex items-center pt-28 pb-12 lg:pt-20 px-6" id="home">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-        <div class="space-y-8 reveal-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-widest">
+        <div class="space-y-8 reveal-left text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-widest mx-auto lg:mx-0">
                 <span class="relative flex h-2 w-2">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-brand"></span>
                 </span>
                 Disponível para novos projetos
             </div>
-            <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white">
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white">
                 Construindo sistemas que <span class="text-brand">escalam</span> com precisão.
             </h1>
-            <p class="text-xl text-gray-500 dark:text-gray-400 max-w-xl leading-relaxed">
+            <p class="text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-xl leading-relaxed mx-auto lg:mx-0">
                 Eu sou Gabriel Rodrigues, um Desenvolvedor Full-stack especializado em arquiteturas de alta performance e sistemas distribuídos.
             </p>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <a class="px-8 py-4 bg-brand text-white font-bold rounded-custom hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all" href="#projects">Ver Projetos</a>
                 <a class="px-8 py-4 border border-gray-200 dark:border-glassBorder bg-gray-50 dark:bg-glass dark:text-white font-bold rounded-custom hover:bg-gray-100 dark:hover:bg-glassBorder transition-all" href="#contact">Contate-me</a>
             </div>
         </div>
 
-        <div class="hidden lg:flex justify-center items-center reveal-right">
+        <div class="flex justify-center items-center reveal-right mt-8 lg:mt-0">
             <div class="relative w-full max-w-[450px]">
-                <div class="absolute inset-0 bg-brand/10 rounded-full blur-[100px] animate-pulse-slow"></div>
+                <div class="absolute inset-0 bg-brand/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse-slow"></div>
                 
-                <div class="relative z-10 bg-[#0d1117] border border-[#30363d] rounded-[10px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.4),inset_0_0_40px_rgba(0,0,0,0.6)] font-mono animate-float">
+                <div class="relative z-10 bg-[#0d1117] border border-[#30363d] rounded-[10px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.4),inset_0_0_40px_rgba(0,0,0,0.6)] font-mono animate-float mx-auto">
                     <div class="absolute inset-0 pointer-events-none opacity-[0.05] bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.02),rgba(255,255,255,0.02)_1px,transparent_1px,transparent_3px)]"></div>
                     
                     <div class="flex items-center gap-[6px] px-[10px] py-[8px] bg-[#161b22] border-b border-[#30363d] relative">
-                        <div class="w-[10px] h-[10px] rounded-full bg-[#ff5f56]"></div>
-                        <div class="w-[10px] h-[10px] rounded-full bg-[#ffbd2e]"></div>
-                        <div class="w-[10px] h-[10px] rounded-full bg-[#27c93f]"></div>
-                        <span class="absolute left-1/2 -translate-x-1/2 text-[0.75rem] text-[#8b949e]">bash</span>
+                        <div class="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] rounded-full bg-[#ff5f56]"></div>
+                        <div class="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] rounded-full bg-[#ffbd2e]"></div>
+                        <div class="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] rounded-full bg-[#27c93f]"></div>
+                        <span class="absolute left-1/2 -translate-x-1/2 text-[0.65rem] sm:text-[0.75rem] text-[#8b949e]">bash</span>
                     </div>
 
-                    <div class="p-[16px] leading-[1.5] text-[0.95rem] text-[#c9d1d9]">
+                    <div class="p-[12px] sm:p-[16px] leading-[1.5] text-[0.8rem] sm:text-[0.95rem] text-[#c9d1d9]">
                         <div class="flex flex-wrap">
                             <span class="text-[#7ee787] mr-[8px]">wello@dev:~$</span>
                             <span class="break-words">
                                 Olá! Sou Gabriel Rodrigues. Desenvolvedor focado em soluções robustas e escaláveis. 
-                                <span class="inline-block w-[8px] h-[1.1em] bg-[#c9d1d9] ml-[2px] align-middle animate-[blink_1s_steps(1)_infinite]"></span>
+                                <span class="inline-block w-[6px] h-[1em] sm:w-[8px] bg-[#c9d1d9] ml-[2px] align-middle animate-[blink_1s_steps(1)_infinite]"></span>
                             </span>
                         </div>
                     </div>
