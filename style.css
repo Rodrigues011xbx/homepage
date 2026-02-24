@@ -1,0 +1,68 @@
+/* Base Styles */
+body {
+  overflow-x: hidden;
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.6); /* Mais opaco no modo light */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+/* Cursor Custom */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8b5cf6;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .custom-cursor { display: block; }
+}
+
+/* Background Gradients */
+.gradient-bg {
+  background: radial-gradient(circle at 50% 50%, #f3f4f6 0%, #ffffff 100%);
+}
+
+.dark .gradient-bg {
+  background: radial-gradient(circle at 50% 50%, #12121a 0%, #050505 100%);
+}
+
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px; height: 12px;
+  background: #8b5cf6;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #8b5cf6;
+}
