@@ -79,29 +79,38 @@
     </div>
 
     <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-dark z-[150] translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-        <div class="flex flex-col h-full p-6">
-            <div class="flex items-center justify-between mb-10">
-                <div class="w-10 h-10 bg-brand rounded-custom flex items-center justify-center font-bold text-white text-xl">GR</div>
-                <div class="flex items-center gap-2">
-                    <button id="theme-toggle-mobile" class="p-3 text-gray-900 dark:text-white theme-btn">
-                        <i data-lucide="sun" class="hidden dark:block text-brand w-7 h-7"></i>
-                        <i data-lucide="moon" class="block dark:hidden text-gray-400 w-7 h-7"></i>
-                    </button>
-                    <button id="close-menu-btn" class="p-2 text-gray-900 dark:text-white">
-                        <i data-lucide="x" class="w-8 h-8"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="flex flex-col gap-8 items-center text-center">
-                <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#home">Início</a>
-                <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#about">Sobre</a>
-                <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#projects">Projetos</a>
-                <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#experience">Experiência</a>
-                <a class="w-full mt-4 px-8 py-4 bg-brand text-white font-bold rounded-custom text-xl" href="#contact">Fale comigo</a>
+    <div class="flex flex-col h-full p-6">
+        <div class="flex items-center justify-between mb-10">
+            <div class="w-10 h-10 bg-brand rounded-custom flex items-center justify-center font-bold text-white text-xl">GR</div>
+
+            <div class="flex items-center gap-2">
+                <button id="theme-toggle-mobile" class="p-3 text-gray-900 dark:text-white theme-btn">
+                    <i data-lucide="sun" class="hidden dark:block text-brand w-7 h-7"></i>
+                    <i data-lucide="moon" class="block dark:hidden text-gray-400 w-7 h-7"></i>
+                </button>
+
+                <button id="close-menu-btn" class="p-2 text-gray-900 dark:text-white">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
             </div>
         </div>
+
+        <div class="flex flex-col gap-8 text-center mt-10">
+            <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#home">Início</a>
+            <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#about">Sobre</a>
+            <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#projects">Projetos</a>
+            <a class="mobile-link text-2xl font-bold text-gray-900 dark:text-white" href="#experience">Experiência</a>
+
+
+            <a 
+              class="mobile-link mt-6 px-8 py-4 bg-brand text-white font-bold rounded-custom text-xl text-center w-full max-w-[260px] mx-auto block active:scale-95 transition-all"
+              href="#contact"
+            >
+              Fale comigo
+            </a>
+        </div>
     </div>
+</div>
 </nav>
 
     <main>
@@ -231,64 +240,108 @@
         </section>
 
         <section class="py-24 px-6" id="projects">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal-up">
-                    <div>
-                        <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Trabalhos Selecionados.</h2>
-                        <div class="w-20 h-1 bg-brand"></div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="glass-card group rounded-custom overflow-hidden flex flex-col reveal-up">
-                        <div class="aspect-video overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                            <img alt="OmniPay" class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"/>
-                        </div>
-                        <div class="p-8 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">OmniPay Backend</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Motor de pagamentos de alta vazão.</p>
-                            <div class="mt-auto flex items-center justify-between">
-                                <span class="text-xs font-mono text-brand">Node.js • Redis</span>
-                                <button class="text-gray-900 dark:text-white flex items-center gap-2 text-sm font-bold group/btn hover:text-brand transition-colors">
-                                    Ver Estudo <i class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" data-lucide="arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal-up">
+            <div>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Trabalhos Selecionados.</h2>
+                <div class="w-20 h-1 bg-brand"></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            
+            <div class="project-card-rich glass-card p-6 rounded-custom border border-gray-200 dark:border-glassBorder reveal-up" 
+                 data-image="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800">
+                <div class="flex flex-col gap-5">
+                    <div class="title-group">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Coolify</h3>
+                        <p class="text-base text-gray-500 dark:text-gray-400 mt-1">Plataforma self-hosted para deploy de aplicações.</p>
                     </div>
 
-                    <div class="glass-card group rounded-custom overflow-hidden flex flex-col reveal-up" style="transition-delay: 100ms;">
-                        <div class="aspect-video overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                            <img alt="LogiTrack" class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"/>
-                        </div>
-                        <div class="p-8 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">LogiTrack API</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Rastreamento logístico em tempo real.</p>
-                            <div class="mt-auto flex items-center justify-between">
-                                <span class="text-xs font-mono text-brand">Python • Docker</span>
-                                <button class="text-gray-900 dark:text-white flex items-center gap-2 text-sm font-bold group/btn hover:text-brand transition-colors">
-                                    Ver Estudo <i class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" data-lucide="arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-base badge-tip">Docker</span>
+                        <span class="badge-base badge-warning">Self-hosted</span>
+                        <span class="badge-base badge-danger">Linux</span>
                     </div>
 
-                    <div class="glass-card group rounded-custom overflow-hidden flex flex-col reveal-up" style="transition-delay: 200ms;">
-                        <div class="aspect-video overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                            <img alt="Nexu" class="w-full h-full object-cover group-hover:scale-110 transition-all" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"/>
-                        </div>
-                        <div class="p-8 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Nexu Dashboard</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Monitoramento de infraestrutura cloud.</p>
-                            <div class="mt-auto flex items-center justify-between">
-                                <span class="text-xs font-mono text-brand">React • Go</span>
-                                <button class="text-gray-900 dark:text-white flex items-center gap-2 text-sm font-bold group/btn hover:text-brand transition-colors">
-                                    Ver Estudo <i class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" data-lucide="arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <div class="mt-2 flex items-center justify-between border-t border-gray-100 dark:border-white/5 pt-5">
+                         <span class="text-xs font-mono text-brand font-semibold">Node.js • Redis</span>
+                         <a href="#" class="text-gray-900 dark:text-white flex items-center gap-2 text-sm font-bold hover:text-brand transition-colors group/link">
+                            Ver Projeto <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform"></i>
+                         </a>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="project-card-rich glass-card p-6 rounded-custom border border-gray-200 dark:border-glassBorder reveal-up" 
+                 style="transition-delay: 100ms;"
+                 data-image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800">
+                <div class="flex flex-col gap-5">
+                    <div class="title-group">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">OmniPay API</h3>
+                        <p class="text-base text-gray-500 dark:text-gray-400 mt-1">Motor de pagamentos de alta vazão e performance.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-base badge-tip">SaaS</span>
+                        <span class="badge-base badge-warning">Fintech</span>
+                        <span class="badge-base badge-danger">High-Load</span>
+                    </div>
+                    <div class="mt-2 flex items-center justify-between border-t border-gray-100 dark:border-white/5 pt-5">
+                         <span class="text-xs font-mono text-brand font-semibold">Python • PostgreSQL</span>
+                         <a href="#" class="text-gray-900 dark:text-white flex items-center gap-2 text-sm font-bold hover:text-brand transition-colors group/link">
+                            Ver Estudo <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform"></i>
+                         </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-rich glass-card p-6 rounded-custom border border-gray-200 dark:border-glassBorder reveal-up" 
+                 style="transition-delay: 200ms;"
+                 data-image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800">
+                <div class="flex flex-col gap-5">
+                    <div class="title-group">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">LogiTrack</h3>
+                        <p class="text-base text-gray-500 dark:text-gray-400 mt-1">Rastreamento logístico em tempo real com mapas.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-base badge-tip">DevOps</span>
+                        <span class="badge-base badge-warning">Containers</span>
+                        <span class="badge-base badge-danger">Cloud</span>
+                    </div>
+                    <div class="mt-2 flex items-center justify-between border-t border-gray-100 dark:border-white/5 pt-5">
+                         <span class="text-xs font-mono text-brand font-semibold">React • Go</span>
+                         <a href="#" class="text-gray-900 dark:text-white flex items-center gap-2 text-sm font-bold hover:text-brand transition-colors group/link">
+                            Ver Projeto <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform"></i>
+                         </a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="project-card-rich glass-card p-6 rounded-custom border border-gray-200 dark:border-glassBorder reveal-up" 
+                 style="transition-delay: 200ms;"
+                 data-image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800">
+                <div class="flex flex-col gap-5">
+                    <div class="title-group">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">LogiTrack</h3>
+                        <p class="text-base text-gray-500 dark:text-gray-400 mt-1">Rastreamento logístico em tempo real com mapas.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="badge-base badge-tip">DevOps</span>
+                        <span class="badge-base badge-warning">Containers</span>
+                        <span class="badge-base badge-danger">Cloud</span>
+                    </div>
+                    <div class="mt-2 flex items-center justify-between border-t border-gray-100 dark:border-white/5 pt-5">
+                         <span class="text-xs font-mono text-brand font-semibold">React • Go</span>
+                         <a href="#" class="text-gray-900 dark:text-white flex items-center gap-2 text-sm font-bold hover:text-brand transition-colors group/link">
+                            Ver Projeto <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform"></i>
+                         </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <section class="py-24 px-6 bg-gray-50 dark:bg-surface/30" id="experience">
             <div class="max-w-4xl mx-auto">

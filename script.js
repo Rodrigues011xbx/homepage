@@ -105,3 +105,55 @@ document.addEventListener('DOMContentLoaded', () => {
         window.lucide.createIcons();
     }
 });
+
+
+// Adicione esta função ao final do seu arquivo script.js
+const initProjectPreviews = () => {
+    const cards = document.querySelectorAll('.project-card-rich');
+    const previewContainer = document.createElement('div');
+    
+    // Estilização do preview (oculto por padrão e escondido no mobile)
+    previewContainer.className = 'fixed pointer-events-none z-[200] opacity-0 scale-95 transition-all duration-300 rounded-lg overflow-hidden border-2 border-brand shadow-2xl w-72 aspect-video hidden lg:block';
+    previewContainer.style.backgroundSize = 'cover';
+    previewContainer.style.backgroundPosition = 'center';
+    document.body.appendChild(previewContainer);
+
+    cards.forEach(card => {
+        const projectImg = card.getAttribute('data-image');
+
+        card.addEventListener('mouseenter', () => {
+            if (projectImg) {
+                previewContainer.style.backgroundImage = `url(${projectImg})`;
+                previewContainer.classList.remove('opacity-0', 'scale-95');
+                previewContainer.classList.add('opacity-100', 'scale-100');
+            }
+        });
+
+        card.addEventListener('mousemove', (e) => {
+            // Segue o mouse com leve atraso visual
+            const x = e.clientX + 25;
+            const y = e.clientY + 25;
+            previewContainer.style.transform = `translate(${x}px, ${y}px)`;
+            // Resetamos o top/left para usar o translate para melhor performance
+            previewContainer.style.top = '0';
+            previewContainer.style.left = '0';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            previewContainer.classList.add('opacity-0', 'scale-95');
+            previewContainer.classList.remove('opacity-100', 'scale-100');
+        });
+    });
+};
+
+// Execute a função no final do DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    // ... suas lógicas anteriores de tema e menu ...
+    
+    initProjectPreviews();
+    
+    // Re-inicializa os ícones do Lucide para os novos cards
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+});

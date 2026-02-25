@@ -66,3 +66,30 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 10px #8b5cf6;
 }
+
+.badge-base {
+    @apply px-2.5 py-1 rounded text-[10px] font-extrabold uppercase border tracking-wider;
+}
+.badge-tip { @apply bg-emerald-500/10 text-emerald-500 border-emerald-500/20; }
+.badge-warning { @apply bg-amber-500/10 text-amber-500 border-amber-500/20; }
+.badge-danger { @apply bg-rose-500/10 text-rose-500 border-rose-500/20; }
+
+/* Efeito de preenchimento que você tinha no Vue */
+.project-card-rich {
+    position: relative;
+    z-index: 1;
+}
+.project-card-rich::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    background: linear-gradient(90deg, #8b5cf6 0%, transparent 100%);
+    opacity: 0.1;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+    border-radius: inherit;
+}
+.project-card-rich:hover::before {
+    width: 100%;
+}
